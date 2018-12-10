@@ -1,8 +1,12 @@
+<p align="center">
+<img src="https://github.com/CatchZeng/AppThinning/raw/master/logo.jpg" alt="AppThinning" title="AppThinning" width="200"/>
+</p>
+
 ## AppThinning
 
-![AppThinning](https://github.com/CatchZeng/AppThinning/raw/master/logo.jpg)
-
 Make app thinner.
+
+## Effect
 
 ![AppThinning](https://github.com/CatchZeng/AppThinning/raw/master/effect.gif)
 
