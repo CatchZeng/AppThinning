@@ -1,0 +1,29 @@
+{
+  "name": "appthinning",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:CatchZeng/AppThinning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CatchZeng/AppThinning/issues"
+  },
+  "homepage": "https://github.com/CatchZeng/AppThinning",
+  "dependencies": {
+    "colors": "^1.3.2",
+    "commander": "^2.19.0",
+    "imageoptim-cli": "^2.0.4",
+    "node-cmd": "^3.0.0",
+    "svgo": "^1.1.1",
+    "tinify": "^1.6.0-beta.2",
+    "walker": "^1.0.7"
+  }
+}
