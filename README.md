@@ -6,8 +6,6 @@
 
 Make app thinner.
 
-## Effect
-
 ![AppThinning](https://github.com/CatchZeng/AppThinning/raw/master/effect.gif)
 
 ## Features
