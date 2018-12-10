@@ -1,5 +1,7 @@
 ## AppThinning
 
+![AppThinning](https://github.com/CatchZeng/AppThinning/raw/master/logo.jpg)
+
 Make app thinner.
 
 ![AppThinning](https://github.com/CatchZeng/AppThinning/raw/master/effect.gif)
