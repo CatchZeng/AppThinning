@@ -2,7 +2,6 @@
 
 var colors = require("colors");
 const tinify = require("tinify");
-tinify.key = "nMWb7C9jqZ7r6q3VT8cnf9f0PBQllxm9";
 
 let compressedCount = 0;
 
@@ -11,9 +10,16 @@ function tinifyImages(images, key, callback) {
     return;
   }
 
-  if (key != undefined) {
-    tinify.key = key;
+  if (key == undefined) {
+    console.log(
+      colors.red(
+        "tiny png key is undefined. you can get key from https://tinypng.com/developers ."
+      )
+    );
+    return;
   }
+
+  tinify.key = key;
 
   compressedCount = 0;
 

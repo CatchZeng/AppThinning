@@ -4,29 +4,36 @@ Make app thinner.
 
 ![AppThinning](https://github.com/CatchZeng/AppThinning/raw/master/effect.gif)
 
+## Features
+
+- Support jpg、png、jpeg、gif、svg.
+- Auto ignore compressed files.
+- Support imageOptim and tinyPng.
+- Support file size limit range.
+
 ## Usage
 
-- clone this repo
+- Clone this repo
 
 ```
 git clone git@github.com:CatchZeng/AppThinning.git
 ```
 
-- check the node environment, if not installed, you can visit https://nodejs.org/ to download the installation package.
+- Check the node environment, if not installed, you can visit https://nodejs.org/ to download the installation package.
 
 ```
 node -v
 ```
 
-- install dependencies
+- Install dependencies
 
 ```
 npm i
 ```
 
-- install [imageOptim](https://imageoptim.com/mac) if you need to use it to compress images.
+- Install [imageOptim](https://imageoptim.com/mac) if you need use it to compress images.
 
-- run script
+- Run script
 
 ```
 node index.js -d "/Users/catchzeng/Desktop/test" -t "png|jpg" -s 1000 -m 2000 -c imageOptim
