@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const { isString } = require("util");
 const fs = require("fs");
 const walker = require("walker");
+const { getFileType } = require("../../util/fileUtil");
 
 class LargeFileFinder {
   constructor() {
@@ -32,7 +32,7 @@ class LargeFileFinder {
       .on("file", (entry, stat) => {
         if (this._isVaildFile(ignoredFiles, entry, stat, type, size, maxSize)) {
           const kb = this._caculateSize(stat);
-          const type = this._getFileType(entry);
+          const type = getFileType(entry);
           if (listener && listener.onFind) {
             listener.onFind(entry, type, kb);
           }
@@ -78,19 +78,13 @@ class LargeFileFinder {
 
     const typeString = type.toString();
     const typeArray = typeString.split("|");
-    var ext = this._getFileType(entry).toUpperCase();
+    var ext = getFileType(entry).toUpperCase();
     for (let type of typeArray) {
       if (type.toUpperCase() === ext) {
         return true;
       }
     }
     return false;
-  }
-
-  _getFileType(entry) {
-    var extStart = entry.lastIndexOf(".");
-    var type = entry.substring(extStart, entry.length).replace(".", "");
-    return type;
   }
 }
 
