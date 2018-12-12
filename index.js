@@ -3,7 +3,7 @@
 const program = require("commander");
 const MiddlewareCenter = require("./src/middleware-center/index");
 const ignore = require("./src/middlewares/ignore/index");
-const largeFiles = require("./src/middlewares/largeFile/index");
+const largeFile = require("./src/middlewares/largeFile/index");
 const compressImage = require("./src/middlewares/compress-image/index");
 const compressSVG = require("./src/middlewares/compress-svg/index");
 
@@ -12,7 +12,7 @@ commander();
 const submiter = new MiddlewareCenter();
 
 submiter.use(ignore);
-submiter.use(largeFiles);
+submiter.use(largeFile);
 submiter.use(compressImage);
 submiter.use(compressSVG);
 
