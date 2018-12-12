@@ -34,7 +34,10 @@ function commander() {
       "-c, --compress <String>",
       "compression types including imageOptim, tinyPng, default is imageOptim."
     )
-    .option("-k, --key <String>", "tinyPng key.")
+    .option(
+      "-k, --key <String>",
+      "tinyPng key get from https://tinypng.com/developers. default is the DefaultTinyPngKey read from src/config/index.js. You can set it up to use tinyPng easily."
+    )
     .option(
       "-i, --ignore <String>",
       "ignored files, default is read from ignore.txt. split by '|', such as a.png|/user/ss/b.png|c.png ."

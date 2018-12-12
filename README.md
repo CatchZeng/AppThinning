@@ -54,7 +54,8 @@ Options:
   -s, --size <Number>      file size, the default is 100, 100 k
   -m, --maxSize<Number>    file max size, default is unlimited.
   -c, --compress <String>  compression types including imageOptim, tinyPng, default is imageOptim.
-  -k, --key <String>       tinyPng key.
+  -k, --key <String>       tinyPng key get from https://tinypng.com/developers. default is the DefaultTinyPngKey read from src/config/index
+.js. You can set it up to use tinyPng easily.
   -i, --ignore <String>    ignored files, default is read from ignore.txt. split by '|', such as a.png|/user/ss/b.png|c.png .
   -h, --help               output usage information
 ```

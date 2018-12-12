@@ -52,7 +52,9 @@ function validate(images) {
   return new Promise((resolve, reject) => {
     tinify.validate(function(err) {
       if (err) {
-        reject("tinyPng validate error. Please check tinyPng's key.");
+        reject(
+          "tinyPng validate error. Please check tinyPng's key, you can get it from https://tinypng.com/developers"
+        );
         return;
       }
 
