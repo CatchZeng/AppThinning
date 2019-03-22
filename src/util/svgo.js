@@ -2,6 +2,7 @@
 
 const nodeCmd = require("node-cmd");
 const colors = require("colors");
+const path = require("path");
 
 function svgo(files) {
   return new Promise((resolve, reject) => {
@@ -9,7 +10,7 @@ function svgo(files) {
       reject("svg files is empty.");
     }
 
-    let cmd = "node_modules/.bin/svgo ";
+    let cmd = path.join(__dirname, "../../node_modules/.bin/svgo") + " ";
     files.forEach(file => {
       cmd += "'" + file + "' ";
     });

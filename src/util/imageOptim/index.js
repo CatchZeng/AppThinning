@@ -2,6 +2,7 @@
 
 const colors = require("colors");
 const nodeCmd = require("node-cmd");
+const path = require("path");
 
 function imageOptim(images) {
   return new Promise((resolve, reject) => {
@@ -9,7 +10,8 @@ function imageOptim(images) {
       reject("images is empty.");
     }
 
-    let cmd = "node_modules/.bin/imageoptim ";
+    let cmd =
+      path.join(__dirname, "../../../node_modules/.bin/imageoptim") + " ";
     images.forEach(image => {
       cmd += "'" + image + "' ";
     });

@@ -1,4 +1,0 @@
-/Users/catchzeng/Desktop/test/1.png
-/Users/catchzeng/Desktop/test/2.jpg
-/Users/catchzeng/Desktop/test/3.gif
-/Users/catchzeng/Desktop/test/4.svg
