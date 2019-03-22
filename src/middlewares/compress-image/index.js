@@ -5,7 +5,8 @@ const tinyPng = require("../../util/tinyPng/index");
 const { appendIgnoreFiles } = require("../ignore/helper");
 
 async function compressImage(ctx, next) {
-  console.log("before compressImage");
+  console.log(colors.yellow("compressing common images."));
+
   let files = [];
   for (let file of ctx.files) {
     if (isCommonImage(file)) {
@@ -36,7 +37,6 @@ async function compressImage(ctx, next) {
   }
 
   await next();
-  console.log("after compressImage");
 }
 
 module.exports = compressImage;

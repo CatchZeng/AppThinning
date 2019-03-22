@@ -2,7 +2,6 @@ const colors = require("colors");
 const { getIgnoredFiles } = require("./helper");
 
 async function ignore(ctx, next) {
-  console.log("before ignore");
   const program = ctx.program;
 
   console.log(colors.yellow("finding ignored files..."));
@@ -22,7 +21,6 @@ async function ignore(ctx, next) {
     console.log(colors.green("ignored files is empty."));
   }
   await next();
-  console.log("after ignore");
 }
 
 module.exports = ignore;

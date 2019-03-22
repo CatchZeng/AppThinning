@@ -4,7 +4,8 @@ const imageOptim = require("../../util/imageOptim/index");
 const { appendIgnoreFiles } = require("../ignore/helper");
 
 async function compressGif(ctx, next) {
-  console.log("before compressGif");
+  console.log(colors.yellow("compressing gif."));
+
   let files = [];
   for (let file of ctx.files) {
     if (isGif(file)) {
@@ -18,13 +19,13 @@ async function compressGif(ctx, next) {
     const result = await imageOptim(files).catch(function(err) {
       console.log(colors.red(err));
     });
+    console.log(colors.bgCyan("gif result: " + result));
     await appendIgnoreFiles(result).catch(function(err) {
       console.log(colors.red(err));
     });
   }
 
   await next();
-  console.log("after compressGif");
 }
 
 module.exports = compressGif;

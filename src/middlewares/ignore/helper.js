@@ -1,16 +1,22 @@
 const fs = require("fs");
 const path = require("path");
+const colors = require("colors");
 
 const ignoreFileName = "appthinning_ignore";
+const ignoreFilePath = path.join(process.cwd(), ignoreFileName);
+console.log(colors.blue("ignore file path: " + ignoreFilePath));
+
+function createIgnoreFile() {
+  return new Promise((resolve, reject) => {
+    if (!fs.existsSync(ignoreFilePath)) {
+      fs.writeFileSync(ignoreFilePath, "");
+    }
+  });
+}
 
 function getIgnoredFiles() {
   return new Promise((resolve, reject) => {
-    const ignoreFilePath = path.join(process.cwd(), ignoreFileName);
-    console.log("ignoreFilePath: " + ignoreFilePath);
-
-    if (!fs.existsSync(ignoreFilePath)) {
-      fs.writeFile(ignoreFilePath, "", function() {});
-    }
+    createIgnoreFile();
 
     fs.readFile(ignoreFilePath, "utf8", function(err, data) {
       if (err) {
@@ -29,12 +35,7 @@ function getIgnoredFiles() {
 
 function appendIgnoreFiles(files) {
   return new Promise((resolve, reject) => {
-    const ignoreFilePath = path.join(process.cwd(), ignoreFileName);
-    console.log("ignoreFilePath: " + ignoreFilePath);
-
-    if (!fs.existsSync(ignoreFilePath)) {
-      fs.writeFile(ignoreFilePath, "", function() {});
-    }
+    createIgnoreFile();
 
     const data = fs.readFileSync(ignoreFilePath, "utf8");
     let content = data.toString();
@@ -46,10 +47,9 @@ function appendIgnoreFiles(files) {
     }
     fs.writeFile(ignoreFilePath, content, function(err) {
       if (err) {
-        console.log("save to ignore.txt failed.");
+        console.log(colors.red("save to ignore file failed."));
         reject(err);
       } else {
-        console.log("save to ignore.txt success.");
         resolve(files);
       }
     });

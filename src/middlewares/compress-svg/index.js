@@ -4,7 +4,8 @@ const svgo = require("../../util/svgo");
 const { appendIgnoreFiles } = require("../ignore/helper");
 
 async function compressSVG(ctx, next) {
-  console.log("before compressSVG");
+  console.log(colors.yellow("compressing svg images."));
+
   let files = [];
   for (let file of ctx.files) {
     if (isSVG(file)) {
@@ -18,13 +19,13 @@ async function compressSVG(ctx, next) {
     const result = await svgo(files).catch(function(err) {
       console.log(colors.red(err));
     });
+    console.log(colors.bgCyan("svgo result: " + result));
     await appendIgnoreFiles(result).catch(function(err) {
       console.log(colors.red(err));
     });
   }
 
   await next();
-  console.log("after compressSVG");
 }
 
 module.exports = compressSVG;

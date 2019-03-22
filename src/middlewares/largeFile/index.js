@@ -3,7 +3,6 @@ const colors = require("colors");
 const LargeFileFinder = require("./largeFileFinder");
 
 async function largeFile(ctx, next) {
-  console.log("before largeFile");
   const program = ctx.program;
   const ignoredFiles = ctx.ignore;
 
@@ -37,7 +36,6 @@ async function largeFile(ctx, next) {
     console.log(colors.green("largeFiles " + ctx.files));
   }
   await next();
-  console.log("after largeFile");
 }
 
 function find(dir, ignoredFiles, size, maxSize, type) {
