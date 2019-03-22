@@ -19,7 +19,6 @@ async function compressGif(ctx, next) {
     const result = await imageOptim(files).catch(function(err) {
       console.log(colors.red(err));
     });
-    console.log(colors.bgCyan("gif result: " + result));
     await appendIgnoreFiles(result).catch(function(err) {
       console.log(colors.red(err));
     });

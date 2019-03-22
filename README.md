@@ -70,3 +70,10 @@ Options:
   -i, --ignore <String>    ignored files, default is read from appthinning_ignore file. split by '|', such as a.png|/user/ss/b.png|c.png .
   -h, --help               output usage information
 ```
+
+## Uninstall
+
+```
+$ cd path/to/AppThinning
+$ npm uninstall -g
+```
