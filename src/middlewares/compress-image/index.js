@@ -1,7 +1,7 @@
 const colors = require("colors");
 const { isCommonImage } = require("../../util/fileUtil");
-const imageOptim = require("./imageOptim/index");
-const tinyPng = require("./tinyPng/index");
+const imageOptim = require("../../util/imageOptim/index");
+const tinyPng = require("../../util/tinyPng/index");
 const { appendIgnoreFiles } = require("../ignore/helper");
 
 async function compressImage(ctx, next) {

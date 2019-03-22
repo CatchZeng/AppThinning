@@ -1,6 +1,6 @@
 const colors = require("colors");
 const { isSVG } = require("../../util/fileUtil");
-const svgo = require("./svgo");
+const svgo = require("../../util/svgo");
 const { appendIgnoreFiles } = require("../ignore/helper");
 
 async function compressSVG(ctx, next) {

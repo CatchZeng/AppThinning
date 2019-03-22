@@ -6,7 +6,12 @@ function getFileType(entry) {
 
 function isCommonImage(entry) {
   const type = getFileType(entry).toUpperCase();
-  return type === "JPG" || type === "JPEG" || type === "PNG" || type === "GIF";
+  return type === "JPG" || type === "JPEG" || type === "PNG";
+}
+
+function isGif(entry) {
+  const type = getFileType(entry).toUpperCase();
+  return type === "GIF";
 }
 
 function isSVG(entry) {
@@ -14,4 +19,4 @@ function isSVG(entry) {
   return type === "SVG";
 }
 
-module.exports = { getFileType, isCommonImage, isSVG };
+module.exports = { getFileType, isCommonImage, isSVG, isGif };

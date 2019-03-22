@@ -5,20 +5,22 @@ const MiddlewareCenter = require("./src/middleware-center/index");
 const ignore = require("./src/middlewares/ignore/index");
 const largeFile = require("./src/middlewares/largeFile/index");
 const compressImage = require("./src/middlewares/compress-image/index");
+const compressGif = require("./src/middlewares/compress-gif/index");
 const compressSVG = require("./src/middlewares/compress-svg/index");
 
 commander();
 
-const submiter = new MiddlewareCenter();
+const submitter = new MiddlewareCenter();
 
-submiter.use(ignore);
-submiter.use(largeFile);
-submiter.use(compressImage);
-submiter.use(compressSVG);
+submitter.use(ignore);
+submitter.use(largeFile);
+submitter.use(compressImage);
+submitter.use(compressGif);
+submitter.use(compressSVG);
 
 let ctx = {};
 ctx.program = program;
-submiter.handleRequest(ctx);
+submitter.handleRequest(ctx);
 
 function commander() {
   program

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const Config = require("../../../config/index");
+const Config = require("../../config/index");
 const colors = require("colors");
 const tinify = require("tinify");
 tinify.key = Config.defaultTinyPngKey;
