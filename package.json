@@ -1,18 +1,27 @@
 {
   "name": "appthinning",
   "version": "0.1.0",
-  "description": "",
+  "description": "Make app thinner.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:CatchZeng/AppThinning.git"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "thin",
+    "thinning",
+    "AppThinning",
+    "compress",
+    "image",
+    "largeFile",
+    "clean",
+    "clear"
+  ],
+  "author": "CatchZeng",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/CatchZeng/AppThinning/issues"
   },
