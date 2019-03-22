@@ -15,13 +15,7 @@ Make app thinner.
 - Support imageOptim and tinyPng.
 - Support file size limit range.
 
-## Install
-
-- Clone this repo
-
-```
-git clone git@github.com:CatchZeng/AppThinning.git
-```
+## Requirement
 
 - Check the node environment, if not installed, you can visit https://nodejs.org/ to download the installation package.
 
@@ -29,19 +23,35 @@ git clone git@github.com:CatchZeng/AppThinning.git
 node -v
 ```
 
+- Install [imageOptim](https://imageoptim.com/mac) if you need use it to compress images.
+
+## Install
+
+### Easy way
+
+```
+$ git clone git@github.com:CatchZeng/AppThinning.git ~/Downloads/AppThinning && cd ~/Downloads/AppThinning && npm i && npm i -g
+```
+
+### Another way
+
+- Clone this repo
+
+```
+$ git clone git@github.com:CatchZeng/AppThinning.git
+```
+
 - Install dependencies
 
 ```
-npm i
+$ npm i
 ```
-
-- Install [imageOptim](https://imageoptim.com/mac) if you need use it to compress images.
 
 - Install appthinning
 
 ```
 $ cd path/to/AppThinning
-$ npm install -g
+$ npm i -g
 ```
 
 ## Usage
@@ -69,11 +79,4 @@ Options:
   -k, --key <String>       tinyPng key get from https://tinypng.com/developers. default is the DefaultTinyPngKey read from src/config/index.js. You can set it up to use tinyPng easily.
   -i, --ignore <String>    ignored files, default is read from appthinning_ignore file. split by '|', such as a.png|/user/ss/b.png|c.png .
   -h, --help               output usage information
-```
-
-## Uninstall
-
-```
-$ cd path/to/AppThinning
-$ npm uninstall -g
 ```
