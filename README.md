@@ -15,7 +15,7 @@ Make app thinner.
 - Support imageOptim and tinyPng.
 - Support file size limit range.
 
-## Usage
+## Install
 
 - Clone this repo
 
@@ -37,15 +37,27 @@ npm i
 
 - Install [imageOptim](https://imageoptim.com/mac) if you need use it to compress images.
 
-- Run script
+- Install appthinning
 
 ```
-node index.js -d "/Users/catchzeng/Desktop/test" -t "png|jpg" -s 1000 -m 2000 -c imageOptim
+$ cd path/to/AppThinning
+$ npm install -g
+```
+
+## Usage
+
+```
+appthinning -d "/Users/catchzeng/Desktop/test" -t "png|jpg" -s 1000 -m 2000 -c imageOptim
 ```
 
 ```
-node index.js -h
-Usage: index [options]
+appthinning -h
+   __ _   _ __    _ __   | |_  | |__   (_)  _ __    _ __   (_)  _ __     __ _
+  / _` | | '_ \  | '_ \  | __| | '_ \  | | | '_ \  | '_ \  | | | '_ \   / _` |
+ | (_| | | |_) | | |_) | | |_  | | | | | | | | | | | | | | | | | | | | | (_| |
+  \__,_| | .__/  | .__/   \__| |_| |_| |_| |_| |_| |_| |_| |_| |_| |_|  \__, |
+         |_|     |_|                                                    |___/
+Usage: appthinning [options]
 
 Options:
   -V, --version            output the version number
@@ -54,8 +66,7 @@ Options:
   -s, --size <Number>      file size, the default is 100, 100 k
   -m, --maxSize<Number>    file max size, default is unlimited.
   -c, --compress <String>  compression types including imageOptim, tinyPng, default is imageOptim.
-  -k, --key <String>       tinyPng key get from https://tinypng.com/developers. default is the DefaultTinyPngKey read from src/config/index
-.js. You can set it up to use tinyPng easily.
-  -i, --ignore <String>    ignored files, default is read from ignore.txt. split by '|', such as a.png|/user/ss/b.png|c.png .
+  -k, --key <String>       tinyPng key get from https://tinypng.com/developers. default is the DefaultTinyPngKey read from src/config/index.js. You can set it up to use tinyPng easily.
+  -i, --ignore <String>    ignored files, default is read from appthinning_ignore file. split by '|', such as a.png|/user/ss/b.png|c.png .
   -h, --help               output usage information
 ```

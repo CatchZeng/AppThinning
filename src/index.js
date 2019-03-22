@@ -42,7 +42,7 @@ function commander() {
     )
     .option(
       "-i, --ignore <String>",
-      "ignored files, default is read from ignore.txt. split by '|', such as a.png|/user/ss/b.png|c.png ."
+      "ignored files, default is read from appthinning_ignore file. split by '|', such as a.png|/user/ss/b.png|c.png ."
     )
     .parse(process.argv);
 }
