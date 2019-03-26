@@ -48,7 +48,7 @@ function tinyPng(images, key) {
 }
 
 function validate(images) {
-  console.log(colors.yellow("valdating tinyPng..."));
+  console.log(colors.yellow("validating tinyPng..."));
   return new Promise((resolve, reject) => {
     tinify.validate(function(err) {
       if (err) {

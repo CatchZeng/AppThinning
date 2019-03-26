@@ -91,6 +91,10 @@ Options:
 
 ## ChangeLog
 
+#### V0.1.2
+
+lint code.
+
 #### V0.1.1
 
 sort large files by size.

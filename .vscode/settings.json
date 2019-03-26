@@ -6,7 +6,10 @@
     "imageoptim",
     "middlewares",
     "optim",
+    "png",
     "tinify",
-    "zeng"
+    "tiny",
+    "zeng",
+    "Png's"
   ]
 }
