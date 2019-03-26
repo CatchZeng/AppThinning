@@ -4,6 +4,8 @@
 
 ## AppThinning
 
+[![NPM version](https://img.shields.io/npm/v/appthinning.svg)](https://www.npmjs.com/package/appthinning)
+
 Make app thinner. Help you find large files and compress png, gif, jpg, svg files.
 
 ![AppThinning](https://github.com/CatchZeng/AppThinning/raw/master/effect.gif)
