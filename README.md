@@ -88,3 +88,13 @@ Options:
   -i, --ignore <String>    ignored files, default is read from appthinning_ignore file. split by '|', such as a.png|/user/ss/b.png|c.png .
   -h, --help               output usage information
 ```
+
+## ChangeLog
+
+#### V0.1.1
+
+sort large files by size.
+
+#### V0.1.0
+
+find large files and compress jpg, png, jpeg, gif, svg automatically.
