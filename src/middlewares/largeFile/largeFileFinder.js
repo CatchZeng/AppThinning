@@ -30,8 +30,8 @@ class LargeFileFinder {
   _findFiles(dir, ignoredFiles, size, maxSize, type, listener) {
     walker(dir)
       .on("file", (entry, stat) => {
-        if (this._isVaildFile(ignoredFiles, entry, stat, type, size, maxSize)) {
-          const kb = this._caculateSize(stat);
+        if (this._isValidFile(ignoredFiles, entry, stat, type, size, maxSize)) {
+          const kb = this._calculateSize(stat);
           const type = getFileType(entry);
           if (listener && listener.onFind) {
             listener.onFind(entry, type, kb);
@@ -45,7 +45,7 @@ class LargeFileFinder {
       });
   }
 
-  _isVaildFile(ignoredFiles, entry, stat, type, size, maxSize) {
+  _isValidFile(ignoredFiles, entry, stat, type, size, maxSize) {
     return (
       ignoredFiles.indexOf(entry) == -1 &&
       this._checkFileType(entry, type) &&
@@ -58,7 +58,7 @@ class LargeFileFinder {
       size = 1000;
     }
     const sizeNumber = Number(size);
-    const kb = this._caculateSize(stat);
+    const kb = this._calculateSize(stat);
 
     if (maxSize === undefined) {
       return kb >= sizeNumber;
@@ -67,7 +67,7 @@ class LargeFileFinder {
     }
   }
 
-  _caculateSize(stat) {
+  _calculateSize(stat) {
     return (stat.size / 1024).toFixed(1);
   }
 
