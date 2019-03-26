@@ -4,16 +4,16 @@
 
 ## AppThinning
 
-Make app thinner.
+Make app thinner. Help you find large files and compress png, gif, jpg, svg files.
 
 ![AppThinning](https://github.com/CatchZeng/AppThinning/raw/master/effect.gif)
 
 ## Features
 
-- Support jpg、png、jpeg、gif、svg.
+- Compress jpg, png, jpeg, gif, svg automatically.
 - Auto ignore compressed files.
 - Support imageOptim and tinyPng.
-- Support file size limit range.
+- Custom file size limit range.
 
 ## Requirement
 
@@ -27,13 +27,19 @@ node -v
 
 ## Install
 
-### Easy way
+### Easy way (install from npm package)
+
+```
+$ npm i appthinning -g
+```
+
+### Another way (install from source)
 
 ```
 $ git clone git@github.com:CatchZeng/AppThinning.git ~/Downloads/AppThinning && cd ~/Downloads/AppThinning && npm i && npm i -g
 ```
 
-### Another way
+or
 
 - Clone this repo
 
