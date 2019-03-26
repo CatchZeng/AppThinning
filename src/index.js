@@ -24,7 +24,7 @@ submitter.handleRequest(ctx);
 
 function commander() {
   program
-    .version("0.1.2")
+    .version("0.1.3")
     .option("-d, --dir <String>", "project directory.")
     .option(
       "-t, --types <String>",

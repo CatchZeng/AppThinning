@@ -32,9 +32,6 @@ async function largeFile(ctx, next) {
   );
   ctx.files = result;
 
-  if (ctx.files.length > 0) {
-    console.log(colors.green("largeFiles " + ctx.files));
-  }
   await next();
 }
 
@@ -56,7 +53,7 @@ function find(dir, ignoredFiles, size, maxSize, type) {
           yield* [...this.entries()].sort((a, b) => b[1] - a[1]);
         };
         for (let [key, value] of fileMap) {
-          console.log(colors.blue.underline(value + "k " + key));
+          console.log(colors.blue.underline(value.toFixed(1) + "k " + key));
         }
         console.log(
           colors.yellow(
@@ -64,7 +61,7 @@ function find(dir, ignoredFiles, size, maxSize, type) {
               files.length +
               " files, " +
               "total size " +
-              totalSize +
+              totalSize.toFixed(1) +
               "k"
           )
         );

@@ -91,6 +91,10 @@ Options:
 
 ## ChangeLog
 
+#### V0.1.3
+
+prefer log.
+
 #### V0.1.2
 
 lint code.
