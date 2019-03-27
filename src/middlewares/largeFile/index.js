@@ -53,7 +53,7 @@ function find(dir, ignoredFiles, size, maxSize, type) {
           yield* [...this.entries()].sort((a, b) => b[1] - a[1]);
         };
         for (let [key, value] of fileMap) {
-          console.log(colors.blue.underline(value.toFixed(1) + "k " + key));
+          console.log(colors.blue.underline(value.toFixed(1) + "kB " + key));
         }
         console.log(
           colors.green(
@@ -62,7 +62,7 @@ function find(dir, ignoredFiles, size, maxSize, type) {
               " files, " +
               "total size " +
               totalSize.toFixed(1) +
-              "k"
+              "kB"
           )
         );
         resolve(files);

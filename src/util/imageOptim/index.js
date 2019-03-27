@@ -15,7 +15,7 @@ function imageOptim(images) {
     images.forEach(image => {
       cmd += "'" + image + "' ";
     });
-    cmd = cmd.substring(0, cmd.lastIndexOf(" "));
+    cmd = cmd.substring(0, cmd.lastIndexOf(" ")) + " -S"; //do not display file size savings and quality loss information
 
     nodeCmd.get(cmd, function(err, data, stderr) {
       if (err) {

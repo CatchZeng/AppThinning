@@ -21,6 +21,8 @@ async function ignore(ctx, next) {
     console.log(colors.green("ignored files is empty."));
   }
   await next();
+
+  console.log(colors.green("A total savings of " + ctx.totalSaving + " kB"));
 }
 
 module.exports = ignore;

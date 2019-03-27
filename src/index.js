@@ -7,6 +7,7 @@ const largeFile = require("./middlewares/largeFile/index");
 const compressImage = require("./middlewares/compress-image/index");
 const compressGif = require("./middlewares/compress-gif/index");
 const compressSVG = require("./middlewares/compress-svg/index");
+const colors = require("colors");
 
 commander();
 
@@ -20,11 +21,12 @@ submitter.use(compressSVG);
 
 let ctx = {};
 ctx.program = program;
+ctx.totalSaving = 0;
 submitter.handleRequest(ctx);
 
 function commander() {
   program
-    .version("0.1.3")
+    .version("0.1.4")
     .option("-d, --dir <String>", "project directory.")
     .option(
       "-t, --types <String>",

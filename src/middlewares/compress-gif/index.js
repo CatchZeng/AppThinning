@@ -28,21 +28,23 @@ async function compressGif(ctx, next) {
     const sizeAfterCompressed = calculateFilesSizeInKB(files);
     const percent =
       (sizeBeforeCompressed - sizeAfterCompressed) / sizeBeforeCompressed;
+    const saving = (sizeBeforeCompressed - sizeAfterCompressed).toFixed(1);
+    ctx.totalSaving += Number(saving);
 
     console.log(
       colors.green(
         "TOTAL was: " +
-          sizeBeforeCompressed.toFixed(1) +
-          "K " +
+          sizeBeforeCompressed +
+          "kB " +
           "now: " +
-          sizeAfterCompressed.toFixed(1) +
-          "K " +
+          sizeAfterCompressed +
+          "kB " +
           "saving: " +
-          (sizeBeforeCompressed - sizeAfterCompressed).toFixed(1) +
-          "K " +
+          saving +
+          "kB " +
           "(" +
-          percent.toFixed(1) +
-          ")"
+          percent.toFixed(1) * 100 +
+          "%)"
       )
     );
   }

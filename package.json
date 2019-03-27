@@ -1,6 +1,6 @@
 {
   "name": "appthinning",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Make app thinner. Help you find large files and compress png, gif, jpg, jpeg, svg files.",
   "main": "index.js",
   "bin": {
