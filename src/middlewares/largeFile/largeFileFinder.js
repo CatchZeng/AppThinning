@@ -2,7 +2,7 @@
 
 const fs = require("fs");
 const walker = require("walker");
-const { getFileType } = require("../../util/fileUtil");
+const { getFileType, calculateStatSizeToKB } = require("../../util/fileUtil");
 
 class LargeFileFinder {
   constructor() {
@@ -31,7 +31,7 @@ class LargeFileFinder {
     walker(dir)
       .on("file", (entry, stat) => {
         if (this._isValidFile(ignoredFiles, entry, stat, type, size, maxSize)) {
-          const kb = this._calculateSize(stat);
+          const kb = calculateStatSizeToKB(stat);
           const type = getFileType(entry);
           if (listener && listener.onFind) {
             listener.onFind(entry, type, kb);
@@ -58,17 +58,13 @@ class LargeFileFinder {
       size = 1000;
     }
     const sizeNumber = Number(size);
-    const kb = this._calculateSize(stat);
+    const kb = calculateStatSizeToKB(stat);
 
     if (maxSize === undefined) {
       return kb >= sizeNumber;
     } else {
       return kb >= sizeNumber && kb <= maxSize;
     }
-  }
-
-  _calculateSize(stat) {
-    return (stat.size / 1024).toFixed(1);
   }
 
   _checkFileType(entry, type) {

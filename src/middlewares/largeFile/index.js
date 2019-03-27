@@ -56,7 +56,7 @@ function find(dir, ignoredFiles, size, maxSize, type) {
           console.log(colors.blue.underline(value.toFixed(1) + "k " + key));
         }
         console.log(
-          colors.yellow(
+          colors.green(
             "found " +
               files.length +
               " files, " +
