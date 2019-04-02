@@ -4,6 +4,8 @@
 
 ## AppThinning
 
+[中文请戳](https://github.com/CatchZeng/AppThinning/blob/master/README_CN.md)
+
 [![NPM version](https://img.shields.io/npm/v/appthinning.svg)](https://www.npmjs.com/package/appthinning)
 
 Make app thinner. Help you find large files and compress png, gif, jpg, svg files.
