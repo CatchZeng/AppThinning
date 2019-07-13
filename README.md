@@ -93,6 +93,10 @@ Options:
 
 ## ChangeLog
 
+#### v0.1.5
+
+update dependencies.
+
 #### V0.1.4
 
 add savings logs.
