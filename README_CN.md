@@ -1,12 +1,10 @@
-<p align="center">
-<img src="https://github.com/CatchZeng/AppThinning/raw/master/logo.jpg" alt="AppThinning" title="AppThinning" width="200"/>
-</p>
+# AppThinning
 
-## AppThinning
+<p align="center"><img src="https://github.com/CatchZeng/AppThinning/raw/master/logo.jpg" alt="AppThinning" title="AppThinning" width="200"/></p>
 
 [![NPM version](https://img.shields.io/npm/v/appthinning.svg)](https://www.npmjs.com/package/appthinning)
 
-应用程序瘦身工具，帮助你找到大文件，压缩 png、gif、jpg、svg 等文件。
+> 应用程序瘦身工具，帮助你找到大文件，压缩 png、gif、jpg、svg 等文件。
 
 ![AppThinning](https://github.com/CatchZeng/AppThinning/raw/master/effect.gif)
 
@@ -21,7 +19,7 @@
 
 - 使用前请检查 node 环境, 如果没有安装, 可以访问 https://nodejs.org/ 进行下载安装。
 
-```
+```bash
 node -v
 ```
 
@@ -31,44 +29,44 @@ node -v
 
 ### 简单方法 (推荐)
 
-```
-$ npm i appthinning -g
+```bash
+npm i appthinning -g
 ```
 
 ### 源码安装
 
-```
-$ git clone git@github.com:CatchZeng/AppThinning.git ~/Downloads/AppThinning && cd ~/Downloads/AppThinning && npm i && npm i -g
+```bash
+git clone git@github.com:CatchZeng/AppThinning.git ~/Downloads/AppThinning && cd ~/Downloads/AppThinning && npm i && npm i -g
 ```
 
 或者
 
 - 克隆项目
 
-```
-$ git clone git@github.com:CatchZeng/AppThinning.git
+```bash
+git clone git@github.com:CatchZeng/AppThinning.git
 ```
 
 - 安装依赖
 
-```
-$ npm i
+```bash
+npm i
 ```
 
 - 安装 appthinning
 
-```
-$ cd path/to/AppThinning
-$ npm i -g
+```bash
+cd path/to/AppThinning
+npm i -g
 ```
 
 ## 使用
 
-```
+```bash
 appthinning -d "/Users/catchzeng/Desktop/test" -t "png|jpg" -s 1000 -m 2000 -c imageOptim
 ```
 
-```
+```bash
 appthinning -h
    __ _   _ __    _ __   | |_  | |__   (_)  _ __    _ __   (_)  _ __     __ _
   / _` | | '_ \  | '_ \  | __| | '_ \  | | | '_ \  | '_ \  | | | '_ \   / _` |

@@ -1,14 +1,12 @@
-<p align="center">
-<img src="https://github.com/CatchZeng/AppThinning/raw/master/logo.jpg" alt="AppThinning" title="AppThinning" width="200"/>
-</p>
+# AppThinning
 
-## AppThinning
+<p align="center"><img src="https://github.com/CatchZeng/AppThinning/raw/master/logo.jpg" alt="AppThinning" title="AppThinning" width="200"/></p>
 
 [中文请戳](https://github.com/CatchZeng/AppThinning/blob/master/README_CN.md)
 
 [![NPM version](https://img.shields.io/npm/v/appthinning.svg)](https://www.npmjs.com/package/appthinning)
 
-Make app thinner. Help you find large files and compress png, gif, jpg, svg files.
+> Make app thinner. Help you find large files and compress png, gif, jpg, svg files.
 
 ![AppThinning](https://github.com/CatchZeng/AppThinning/raw/master/effect.gif)
 
@@ -23,7 +21,7 @@ Make app thinner. Help you find large files and compress png, gif, jpg, svg file
 
 - Check the node environment, if not installed, you can visit https://nodejs.org/ to download the installation package.
 
-```
+```bash
 node -v
 ```
 
@@ -33,44 +31,44 @@ node -v
 
 ### Easy way (install from npm package)
 
-```
-$ npm i appthinning -g
+```bash
+npm i appthinning -g
 ```
 
 ### Another way (install from source)
 
-```
-$ git clone git@github.com:CatchZeng/AppThinning.git ~/Downloads/AppThinning && cd ~/Downloads/AppThinning && npm i && npm i -g
+```bash
+git clone git@github.com:CatchZeng/AppThinning.git ~/Downloads/AppThinning && cd ~/Downloads/AppThinning && npm i && npm i -g
 ```
 
 or
 
 - Clone this repo
 
-```
-$ git clone git@github.com:CatchZeng/AppThinning.git
+```bash
+git clone git@github.com:CatchZeng/AppThinning.git
 ```
 
 - Install dependencies
 
-```
-$ npm i
+```bash
+npm i
 ```
 
 - Install appthinning
 
-```
-$ cd path/to/AppThinning
-$ npm i -g
+```bash
+cd path/to/AppThinning
+npm i -g
 ```
 
 ## Usage
 
-```
+```bash
 appthinning -d "/Users/catchzeng/Desktop/test" -t "png|jpg" -s 1000 -m 2000 -c imageOptim
 ```
 
-```
+```bash
 appthinning -h
    __ _   _ __    _ __   | |_  | |__   (_)  _ __    _ __   (_)  _ __     __ _
   / _` | | '_ \  | '_ \  | __| | '_ \  | | | '_ \  | '_ \  | | | '_ \   / _` |
@@ -93,26 +91,30 @@ Options:
 
 ## ChangeLog
 
-#### v0.1.5
+### v0.1.6
+
+use absolute path for project ignore file.
+
+### v0.1.5
 
 update dependencies.
 
-#### V0.1.4
+### V0.1.4
 
 add savings logs.
 
-#### V0.1.3
+### V0.1.3
 
 prefer log.
 
-#### V0.1.2
+### V0.1.2
 
 lint code.
 
-#### V0.1.1
+### V0.1.1
 
 sort large files by size.
 
-#### V0.1.0
+### V0.1.0
 
 find large files and compress jpg, png, jpeg, gif, svg automatically.
