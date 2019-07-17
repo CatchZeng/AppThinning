@@ -2,6 +2,7 @@
 
 const program = require("commander");
 const MiddlewareCenter = require("./middleware-center/index");
+const prepare = require("./middlewares/prepare/index");
 const ignore = require("./middlewares/ignore/index");
 const largeFile = require("./middlewares/largeFile/index");
 const compressImage = require("./middlewares/compress-image/index");
@@ -13,6 +14,7 @@ commander();
 
 const submitter = new MiddlewareCenter();
 
+submitter.use(prepare);
 submitter.use(ignore);
 submitter.use(largeFile);
 submitter.use(compressImage);

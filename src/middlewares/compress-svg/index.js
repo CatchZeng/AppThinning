@@ -21,7 +21,7 @@ async function compressSVG(ctx, next) {
     const result = await svgo(files).catch(function(err) {
       console.log(colors.red(err));
     });
-    await appendIgnoreFiles(result).catch(function(err) {
+    await appendIgnoreFiles(ctx.program.dir, result).catch(function(err) {
       console.log(colors.red(err));
     });
 

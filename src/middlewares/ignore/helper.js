@@ -3,10 +3,8 @@ const path = require("path");
 const colors = require("colors");
 
 const ignoreFileName = "appthinning_ignore";
-const ignoreFilePath = path.join(process.cwd(), ignoreFileName);
-console.log(colors.blue("ignore file path: " + ignoreFilePath));
 
-function createIgnoreFile() {
+function createIgnoreFile(ignoreFilePath) {
   return new Promise((resolve, reject) => {
     if (!fs.existsSync(ignoreFilePath)) {
       fs.writeFileSync(ignoreFilePath, "");
@@ -14,10 +12,11 @@ function createIgnoreFile() {
   });
 }
 
-function getIgnoredFiles() {
+function getIgnoredFiles(dir) {
   return new Promise((resolve, reject) => {
-    createIgnoreFile();
-
+    const ignoreFilePath = path.join(dir, ignoreFileName);
+    createIgnoreFile(ignoreFilePath);
+    
     fs.readFile(ignoreFilePath, "utf8", function(err, data) {
       if (err) {
         reject(err);
@@ -33,9 +32,10 @@ function getIgnoredFiles() {
   });
 }
 
-function appendIgnoreFiles(files) {
+function appendIgnoreFiles(dir, files) {
   return new Promise((resolve, reject) => {
-    createIgnoreFile();
+    const ignoreFilePath = path.join(dir, ignoreFileName);
+    createIgnoreFile(ignoreFilePath);
 
     const data = fs.readFileSync(ignoreFilePath, "utf8");
     let content = data.toString();

@@ -28,14 +28,14 @@ async function compressImage(ctx, next) {
       const result = await tinyPng(files, program.key).catch(function(err) {
         console.log(colors.red(err));
       });
-      await appendIgnoreFiles(result).catch(function(err) {
+      await appendIgnoreFiles(ctx.program.dir, result).catch(function(err) {
         console.log(colors.red(err));
       });
     } else {
       const result = await imageOptim(files).catch(function(err) {
         console.log(colors.red(err));
       });
-      await appendIgnoreFiles(result).catch(function(err) {
+      await appendIgnoreFiles(ctx.program.dir, result).catch(function(err) {
         console.log(colors.red(err));
       });
     }
