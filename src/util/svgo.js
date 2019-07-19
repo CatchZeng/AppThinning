@@ -1,30 +1,33 @@
 #!/usr/bin/env node
-
-const nodeCmd = require("node-cmd");
 const colors = require("colors");
-const path = require("path");
+const SVGO = require("svgo");
+var FS = require('fs');
 
 function svgo(files) {
   return new Promise((resolve, reject) => {
     if (files.length < 1) {
       reject("svg files is empty.");
     }
-
-    let cmd = path.join(__dirname, "../../node_modules/.bin/svgo") + " ";
+    
+    var count = 0
     files.forEach(file => {
-      cmd += "'" + file + "' ";
+      FS.readFile(file, 'utf8', function(err, data) {
+        if (err) {
+          reject(err);
+        }
+        const svgTool = new SVGO();
+        svgTool.optimize(data, {path: file}).then(function(result) {
+          console.log(colors.blue("optimized "+ file));
+          count ++;
+          if (count == files.length) {
+            resolve(files);
+          }
+        }).catch(function(err){
+          reject(err);
+        })
+      })
     });
-    cmd = cmd.substring(0, cmd.lastIndexOf(" "));
-
-    nodeCmd.get(cmd, function(err, data, stderr) {
-      if (err) {
-        reject(err);
-      } else {
-        console.log(colors.green(data));
-        resolve(files);
-      }
-    });
-  });
+  })
 }
 
 module.exports = svgo;

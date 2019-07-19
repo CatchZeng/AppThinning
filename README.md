@@ -91,6 +91,10 @@ Options:
 
 ## ChangeLog
 
+### v0.1.7
+
+optimize svg compression.
+
 ### v0.1.6
 
 use absolute path for project ignore file.
