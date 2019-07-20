@@ -1,16 +1,30 @@
-#! /usr/bin/env node
-var clear = require("clear")
-var chalk = require("chalk")
-var figlet = require("figlet")
-var cmd = require("./src/index")
-var appthinning = require("./src/appthinning")
+const MiddlewareCenter = require("./src/middleware-center/index")
+const prepare = require("./src/middlewares/prepare/index")
+const ignore = require("./src/middlewares/ignore/index")
+const largeFile = require("./src/middlewares/largeFile/index")
+const compressImage = require("./src/middlewares/compress-image/index")
+const compressGif = require("./src/middlewares/compress-gif/index")
+const compressSVG = require("./src/middlewares/compress-svg/index")
 
-clear()
-console.log(
-  chalk.yellow(figlet.textSync("appthinning", { horizontalLayout: "full" }))
-)
-module.exports = {
-  cmd,
-  appthinning
+function appthinning(dir, types, size, maxSize, compress, key, ignoreFiles) {
+    const middlewareCenter = new MiddlewareCenter()
+    middlewareCenter.use(prepare).use(ignore).use(largeFile).use(compressImage).use(compressGif).use(compressSVG)
+
+    let ctx = {}
+    let program = {
+        dir: dir, 
+        types: types, 
+        size: size,
+        maxSize: maxSize, 
+        compress: compress,
+        key: key, 
+        ignore: ignoreFiles
+    }
+    ctx.program = program
+    ctx.totalSaving = 0
+    
+    return middlewareCenter.handleRequest(ctx)
 }
-module.exports.default = cmd
+
+module.exports = appthinning
+module.exports.default = appthinning

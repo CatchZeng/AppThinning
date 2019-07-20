@@ -1,13 +1,13 @@
 {
   "name": "appthinning",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description": "Make app thinner. Help you find large files and compress png, gif, jpg, jpeg, svg files.",
   "main": "index.js",
   "bin": {
-    "appthinning": "index.js"
+    "appthinning": "./bin/appthinning.js"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node ./bin/appthinning.js"
   },
   "repository": {
     "type": "git",
@@ -16,8 +16,8 @@
   "files": [
     "README.md",
     "index.js",
-    "appthinning.js",
-    "src/"
+    "src/",
+    "bin/"
   ],
   "keywords": [
     "thin",
