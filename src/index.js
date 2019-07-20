@@ -1,34 +1,33 @@
 #! /usr/bin/env node
 
-const program = require("commander");
-const MiddlewareCenter = require("./middleware-center/index");
-const prepare = require("./middlewares/prepare/index");
-const ignore = require("./middlewares/ignore/index");
-const largeFile = require("./middlewares/largeFile/index");
-const compressImage = require("./middlewares/compress-image/index");
-const compressGif = require("./middlewares/compress-gif/index");
-const compressSVG = require("./middlewares/compress-svg/index");
-const colors = require("colors");
+const program = require("commander")
+const MiddlewareCenter = require("./middleware-center/index")
+const prepare = require("./middlewares/prepare/index")
+const ignore = require("./middlewares/ignore/index")
+const largeFile = require("./middlewares/largeFile/index")
+const compressImage = require("./middlewares/compress-image/index")
+const compressGif = require("./middlewares/compress-gif/index")
+const compressSVG = require("./middlewares/compress-svg/index")
+const colors = require("colors")
 
-commander();
+commander()
 
-const submitter = new MiddlewareCenter();
+const middlewareCenter = new MiddlewareCenter()
 
-submitter.use(prepare);
-submitter.use(ignore);
-submitter.use(largeFile);
-submitter.use(compressImage);
-submitter.use(compressGif);
-submitter.use(compressSVG);
+middlewareCenter.use(prepare).use(ignore).use(largeFile).use(compressImage).use(compressGif).use(compressSVG)
 
-let ctx = {};
-ctx.program = program;
-ctx.totalSaving = 0;
-submitter.handleRequest(ctx);
+let ctx = {}
+ctx.program = program
+ctx.totalSaving = 0
+middlewareCenter.handleRequest(ctx).then(function(data){
+  console.log(colors.green(data))
+}).catch(function(err){
+  console.log(colors.red(err.message))
+})
 
 function commander() {
   program
-    .version("0.1.7")
+    .version("0.1.8")
     .option("-d, --dir <String>", "project directory.")
     .option(
       "-t, --types <String>",
@@ -48,5 +47,5 @@ function commander() {
       "-i, --ignore <String>",
       "ignored files, default is read from appthinning_ignore file. split by '|', such as a.png|/user/ss/b.png|c.png ."
     )
-    .parse(process.argv);
+    .parse(process.argv)
 }

@@ -1,48 +1,53 @@
 #!/usr/bin/env node
 
-const fs = require("fs");
-const walker = require("walker");
-const { getFileType, calculateStatSizeToKB } = require("../../util/fileUtil");
+const fs = require("fs")
+const walker = require("walker")
+const { getFileType, calculateStatSizeToKB } = require("../../util/fileUtil")
+const {ProjectParamError, ProjectNotExistError} = require("../../error")
 
 class LargeFileFinder {
   constructor() {
-    this.find = this.find.bind(this);
+    this.find = this.find.bind(this)
   }
 
   find(dir, ignoredFiles, size, maxSize, type, listener) {
     if (!dir) {
-      console.log("please check dir.");
-      return;
+      if (listener && listener.onError) {
+        listener.onError(new ProjectParamError())
+      }
+      return
     }
 
-    dir = dir.toString();
-    const that = this;
+    dir = dir.toString()
+    const that = this
     fs.access(dir, function(err) {
       if (err) {
-        console.log("dir is no exist.");
-        return;
+        if (listener && listener.onError) {
+          listener.onError(new ProjectNotExistError())
+        }
+        return
       }
 
-      that._findFiles(dir, ignoredFiles, size, maxSize, type, listener);
-    });
+      that._findFiles(dir, ignoredFiles, size, maxSize, type, listener)
+    })
   }
 
   _findFiles(dir, ignoredFiles, size, maxSize, type, listener) {
     walker(dir)
       .on("file", (entry, stat) => {
         if (this._isValidFile(ignoredFiles, entry, stat, type, size, maxSize)) {
-          const kb = calculateStatSizeToKB(stat);
-          const type = getFileType(entry);
+          const kb = calculateStatSizeToKB(stat)
+          const type = getFileType(entry)
           if (listener && listener.onFind) {
-            listener.onFind(entry, type, kb);
+            listener.onFind(entry, type, kb)
           }
         }
       })
       .on("end", function() {
         if (listener && listener.didFinishFind) {
-          listener.didFinishFind();
+          listener.didFinishFind()
         }
-      });
+      })
   }
 
   _isValidFile(ignoredFiles, entry, stat, type, size, maxSize) {
@@ -50,38 +55,38 @@ class LargeFileFinder {
       ignoredFiles.indexOf(entry) == -1 &&
       this._checkFileType(entry, type) &&
       this._checkFileSize(stat, size, maxSize)
-    );
+    )
   }
 
   _checkFileSize(stat, size, maxSize) {
     if (!size) {
-      size = 1000;
+      size = 1000
     }
-    const sizeNumber = Number(size);
-    const kb = calculateStatSizeToKB(stat);
+    const sizeNumber = Number(size)
+    const kb = calculateStatSizeToKB(stat)
 
     if (maxSize === undefined) {
-      return kb >= sizeNumber;
+      return kb >= sizeNumber
     } else {
-      return kb >= sizeNumber && kb <= maxSize;
+      return kb >= sizeNumber && kb <= maxSize
     }
   }
 
   _checkFileType(entry, type) {
     if (!type) {
-      return true;
+      return true
     }
 
-    const typeString = type.toString();
-    const typeArray = typeString.split("|");
-    var ext = getFileType(entry).toUpperCase();
+    const typeString = type.toString()
+    const typeArray = typeString.split("|")
+    var ext = getFileType(entry).toUpperCase()
     for (let type of typeArray) {
       if (type.toUpperCase() === ext) {
-        return true;
+        return true
       }
     }
-    return false;
+    return false
   }
 }
 
-module.exports = LargeFileFinder;
+module.exports = LargeFileFinder

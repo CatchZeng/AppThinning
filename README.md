@@ -91,6 +91,10 @@ Options:
 
 ## ChangeLog
 
+### v0.1.8
+
+add appthinning module exports.
+
 ### v0.1.7
 
 optimize svg compression.
