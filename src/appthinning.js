@@ -29,4 +29,3 @@ function appthinning(dir, types, size, maxSize, compress, key, ignore) {
 }
 
 module.exports = appthinning
-module.exports.default = appthinning
