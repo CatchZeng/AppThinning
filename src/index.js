@@ -27,7 +27,7 @@ middlewareCenter.handleRequest(ctx).then(function(data){
 
 function commander() {
   program
-    .version("0.2.1")
+    .version("0.2.2")
     .option("-d, --dir <String>", "project directory.")
     .option(
       "-t, --types <String>",

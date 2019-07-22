@@ -1,5 +1,9 @@
 # ChangeLog
 
+## v0.2.2
+
+- fix check imageoptim installation.
+
 ## v0.2.1
 
 - update logo.

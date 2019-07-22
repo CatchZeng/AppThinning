@@ -14,22 +14,24 @@ function imageOptim(images) {
       reject("images is empty.")
     }
     
-    if (!(fs.pathExists(IMAGEOPTIM_BIN_PATH))) {
-      reject(new ImageOptimError(new Error(`ImageOptim.app is not installed.`)))
-    }
+    fs.pathExists(IMAGEOPTIM_BIN_PATH).then(function(exists){
+      if (exists) {
+        let cmd = IMAGEOPTIM_BIN_PATH + " "
+        images.forEach(image => {
+          cmd += "'" + image + "' "
+        })
+        cmd = cmd.substring(0, cmd.lastIndexOf(" "))
 
-    let cmd = IMAGEOPTIM_BIN_PATH + " "
-    images.forEach(image => {
-      cmd += "'" + image + "' "
-    })
-    cmd = cmd.substring(0, cmd.lastIndexOf(" "))
-
-    nodeCmd.get(cmd, function(err, data, _) {
-      if (err) {
-        reject(new ImageOptimError(err))
+        nodeCmd.get(cmd, function(err, data, _) {
+          if (err) {
+            reject(new ImageOptimError(err))
+          } else {
+            console.log(colors.green(data))
+            resolve(images)
+          }
+        })
       } else {
-        console.log(colors.green(data))
-        resolve(images)
+        reject(new ImageOptimError(new Error(`ImageOptim.app is not installed (https://imageoptim.com/mac)`)))
       }
     })
   })
