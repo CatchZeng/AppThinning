@@ -7,7 +7,7 @@ class AppthinningError extends Error {
 
 class ProjectParamError extends AppthinningError {
   constructor() {
-    super(1, "Project directory parameter not specified.") 
+    super(1, "Project directory does not specified.") 
   }
 }
 
@@ -47,6 +47,12 @@ class ImageOptimError extends AppthinningError {
   }
 }
 
+class ImageOptimNotInstalledError extends AppthinningError {
+  constructor() {
+    super(8, "ImageOptim.app is not installed, you can get it from https://imageoptim.com/mac") 
+  }
+}
+
 module.exports = {
   AppthinningError,
   ProjectParamError,
@@ -55,5 +61,6 @@ module.exports = {
   SvgoError,
   TinyPngError,
   TinyPngValidateError,
-  ImageOptimError
+  ImageOptimError,
+  ImageOptimNotInstalledError
 }

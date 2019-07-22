@@ -4,7 +4,7 @@ const colors = require("colors")
 const nodeCmd = require("node-cmd")
 const path = require("path")
 const fs = require("fs-extra");
-const {ImageOptimError} = require("../../error")
+const {ImageOptimError, ImageOptimNotInstalledError} = require("../../error")
 
 const IMAGEOPTIM_BIN_PATH = '/Applications/ImageOptim.app/Contents/MacOS/ImageOptim';
 
@@ -31,7 +31,7 @@ function imageOptim(images) {
           }
         })
       } else {
-        reject(new ImageOptimError(new Error(`ImageOptim.app is not installed (https://imageoptim.com/mac)`)))
+        reject(new ImageOptimNotInstalledError())
       }
     })
   })

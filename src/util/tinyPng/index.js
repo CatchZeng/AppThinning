@@ -53,7 +53,7 @@ function validate(images) {
   return new Promise((resolve, reject) => {
     tinify.validate(function(err) {
       if (err) {
-        reject(new TinyPngError())
+        reject(new TinyPngValidateError())
       }
 
       const compressionsThisMonth = tinify.compressionCount
