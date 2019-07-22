@@ -1,6 +1,6 @@
 # AppThinning
 
-<p align="center"><img src="https://github.com/CatchZeng/AppThinning/raw/master/logo.jpg" alt="AppThinning" title="AppThinning" width="200"/></p>
+<p align="center"><img src="https://github.com/CatchZeng/AppThinning/raw/master/logo.png" alt="AppThinning" title="AppThinning" width="200"/></p>
 
 [中文请戳](https://github.com/CatchZeng/AppThinning/blob/master/README_CN.md)
 

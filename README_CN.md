@@ -1,6 +1,6 @@
 # AppThinning
 
-<p align="center"><img src="https://github.com/CatchZeng/AppThinning/raw/master/logo.jpg" alt="AppThinning" title="AppThinning" width="200"/></p>
+<p align="center"><img src="https://github.com/CatchZeng/AppThinning/raw/master/logo.png" alt="AppThinning" title="AppThinning" width="200"/></p>
 
 [![NPM version](https://img.shields.io/npm/v/appthinning.svg)](https://www.npmjs.com/package/appthinning)
 

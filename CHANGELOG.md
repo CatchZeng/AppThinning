@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v0.2.1
+
+- update logo.
+- replace cmd with imageoptim-cli.
+
 ## v0.2.0
 
 refactor exports.
