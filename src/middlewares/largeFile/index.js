@@ -1,7 +1,7 @@
 const Config = require("../../config/index")
 const colors = require("colors")
 const LargeFileFinder = require("./largeFileFinder")
-const {ProjectParamError} = require("../../error")
+const {ProjectParamError, NoFilesNeedError} = require("../../error")
 
 async function largeFile(ctx, next) {
   const program = ctx.program
@@ -19,8 +19,8 @@ async function largeFile(ctx, next) {
   }
 
   let type = Config.defaultType
-  if (program.type) {
-    type = program.type.toString()
+  if (program.types) {
+    type = program.types.toString()
   }
 
   console.log(colors.yellow("finding large files..."))
@@ -31,6 +31,10 @@ async function largeFile(ctx, next) {
     }
   )
   ctx.files = result
+
+  if (ctx.files.length < 1) {
+    return Promise.reject(new NoFilesNeedError())
+  }
 
   await next()
 }

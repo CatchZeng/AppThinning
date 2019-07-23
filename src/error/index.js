@@ -53,6 +53,12 @@ class ImageOptimNotInstalledError extends AppthinningError {
   }
 }
 
+class NoFilesNeedError extends AppthinningError {
+  constructor() {
+    super(9, "No files need to be processed.") 
+  }
+}
+
 module.exports = {
   AppthinningError,
   ProjectParamError,
@@ -62,5 +68,6 @@ module.exports = {
   TinyPngError,
   TinyPngValidateError,
   ImageOptimError,
-  ImageOptimNotInstalledError
+  ImageOptimNotInstalledError,
+  NoFilesNeedError
 }
