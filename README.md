@@ -10,6 +10,12 @@
 
 ![AppThinning](https://github.com/CatchZeng/AppThinning/raw/master/effect.gif)
 
+## Desktop Version
+
+![AppThinning](https://github.com/CatchZeng/AppThinning/raw/master/desktop.gif)
+
+You can download from [releases](https://github.com/CatchZeng/AppThinning/releases).
+
 ## Features
 
 - Compress jpg, png, jpeg, gif, svg automatically.

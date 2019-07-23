@@ -8,6 +8,12 @@
 
 ![AppThinning](https://github.com/CatchZeng/AppThinning/raw/master/effect.gif)
 
+## 桌面版本
+
+![AppThinning](https://github.com/CatchZeng/AppThinning/raw/master/desktop.gif)
+
+你可以到[releases](https://github.com/CatchZeng/AppThinning/releases)下载安装包.
+
 ## 特性
 
 - 自动压缩 jpg, png, jpeg, gif, svg 等文件。
