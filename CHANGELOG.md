@@ -1,5 +1,14 @@
 # ChangeLog
 
+## v0.2.4
+
+- fix types error.
+- add no files need to be processed error.
+
+## v0.2.3
+
+- optimize errors.
+
 ## v0.2.2
 
 - fix check imageoptim installation.
