@@ -275,6 +275,11 @@ mdn-data@~1.1.0:
   resolved "https://registry.npmjs.org/mdn-data/-/mdn-data-1.1.4.tgz#50b5d4ffc4575276573c4eedb8780812a8419f01"
   integrity sha512-FSYbp3lyKjyj3E7fMl6rYvUdX0FBXaluGqlFoYESWQlyUTq8R+wp0rkFxoYFqZlHCvsUXGjyJmLQSnXToYhOSA==
 
+middleware-center@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/middleware-center/-/middleware-center-1.2.0.tgz#fe4b86976833a741a9fc51af864ae83a6b9f109e"
+  integrity sha512-1za4njWjK8OCftozfu4GKMKWEUmNPzHoQ6oGr9IXhlgACFNMikocswsI09U1Cak6CKAXa31ZLROU6ORfEL5KbQ==
+
 minimist@0.0.8:
   version "0.0.8"
   resolved "https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"

@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 const program = require("commander")
-const MiddlewareCenter = require("./middleware-center/index")
+const MiddlewareCenter = require("middleware-center")
 const prepare = require("./middlewares/prepare/index")
 const ignore = require("./middlewares/ignore/index")
 const largeFile = require("./middlewares/largeFile/index")
@@ -12,7 +12,7 @@ const colors = require("colors")
 
 commander()
 
-const middlewareCenter = new MiddlewareCenter()
+const middlewareCenter = new MiddlewareCenter.MiddlewareCenter()
 
 middlewareCenter.use(prepare).use(ignore).use(largeFile).use(compressImage).use(compressGif).use(compressSVG)
 

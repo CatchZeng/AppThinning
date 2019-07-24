@@ -42,6 +42,7 @@
     "commander": "^2.19.0",
     "figlet": "^1.2.1",
     "fs-extra": "^8.1.0",
+    "middleware-center": "^1.2.0",
     "node-cmd": "^3.0.0",
     "svgo": "^1.1.1",
     "tinify": "^1.6.0-beta.2",

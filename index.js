@@ -1,4 +1,4 @@
-const MiddlewareCenter = require("./src/middleware-center/index")
+const MiddlewareCenter = require("middleware-center")
 const prepare = require("./src/middlewares/prepare/index")
 const ignore = require("./src/middlewares/ignore/index")
 const largeFile = require("./src/middlewares/largeFile/index")
@@ -7,7 +7,7 @@ const compressGif = require("./src/middlewares/compress-gif/index")
 const compressSVG = require("./src/middlewares/compress-svg/index")
 
 function appthinning(dir, types, size, maxSize, compress, key, ignoreFiles) {
-    const middlewareCenter = new MiddlewareCenter()
+    const middlewareCenter = new MiddlewareCenter.MiddlewareCenter()
     middlewareCenter.use(prepare).use(ignore).use(largeFile).use(compressImage).use(compressGif).use(compressSVG)
 
     let ctx = {}
