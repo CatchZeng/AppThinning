@@ -1,5 +1,13 @@
 # ChangeLog
 
+## v0.2.6
+
+- use middle-center package.
+  
+## v0.2.5
+
+- release desktop v0.2.5.
+
 ## v0.2.4
 
 - fix types error.
