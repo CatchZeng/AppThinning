@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v0.2.7
+
+- fix the problem of invalidation when size is set to 0
+- fix node-cmd buffer overflow
+
 ## v0.2.6
 
 - use middle-center package.
