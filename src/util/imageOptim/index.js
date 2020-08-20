@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const colors = require("colors")
-const nodeCmd = require("node-cmd")
+var exec = require('child_process').exec;
 const path = require("path")
 const fs = require("fs-extra");
 const {ImageOptimError, ImageOptimNotInstalledError} = require("../../error")
@@ -21,15 +21,18 @@ function imageOptim(images) {
           cmd += "'" + image + "' "
         })
         cmd = cmd.substring(0, cmd.lastIndexOf(" "))
-
-        nodeCmd.get(cmd, function(err, data, _) {
-          if (err) {
-            reject(new ImageOptimError(err))
-          } else {
-            console.log(colors.green(data))
-            resolve(images)
+        exec(
+          cmd,
+          {maxBuffer: 1024 * 1024 * 1024},
+          function(err, data, _) {
+            if (err) {
+              reject(new ImageOptimError(err))
+            } else {
+              console.log(colors.green(data))
+              resolve(images)
+            }
           }
-        })
+        );
       } else {
         reject(new ImageOptimNotInstalledError())
       }
