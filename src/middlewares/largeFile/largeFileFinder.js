@@ -59,7 +59,7 @@ class LargeFileFinder {
   }
 
   _checkFileSize(stat, size, maxSize) {
-    if (!size) {
+    if (size != 0 && !size) {
       size = 1000
     }
     const sizeNumber = Number(size)

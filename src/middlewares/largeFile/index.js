@@ -14,7 +14,7 @@ async function largeFile(ctx, next) {
   const dir = program.dir.toString()
 
   let size = Config.defaultSize
-  if (program.size) {
+  if (program.size == 0 || program.size) {
     size = Number(program.size)
   }
 
