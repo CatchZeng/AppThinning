@@ -14,7 +14,7 @@
 
 ![AppThinning](https://github.com/CatchZeng/AppThinning/raw/master/desktop.gif)
 
-You can download from [releases](https://github.com/CatchZeng/AppThinning/releases).
+You can build from [AppThinning-Desktop](https://github.com/CatchZeng/AppThinning-Desktop).
 
 ## Features
 

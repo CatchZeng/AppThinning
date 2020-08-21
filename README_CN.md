@@ -12,7 +12,7 @@
 
 ![AppThinning](https://github.com/CatchZeng/AppThinning/raw/master/desktop.gif)
 
-你可以到[releases](https://github.com/CatchZeng/AppThinning/releases)下载安装包.
+你可以使用[AppThinning-Desktop](https://github.com/CatchZeng/AppThinning-Desktop)仓库构建安装包。
 
 ## 特性
 
